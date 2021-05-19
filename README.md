@@ -1,2 +1,0 @@
-# musaumutyelkenci.github.io
- as
