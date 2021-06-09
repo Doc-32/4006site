@@ -106,6 +106,7 @@ if(!(n % i))
 function kare(s,n){
 var s1=s;
 for(var i = 1; i<s;i++)s1=(s1+s)%n;
+return s1;
 
 
 }
@@ -135,7 +136,7 @@ function isPerfect(n){
 			{
 			if (k == 2)return  n1 + " sayısı mükemmel sayıdır.";
 			var s = 4;
-			for(var sak = 0; sak<k-2;sak++) s = mod((s * s - 2),n);
+			for(var sak = 0; sak<k-2;sak++) s = mod((kare(s,n) - 2),n);
 			if (!s)return  n1+ " sayısı mükemmel sayıdır.";
 			}
 		return n1+ " sayısı mükemmel sayı değildir.";
@@ -170,6 +171,8 @@ var end = new Date().getTime();
 time1=(end - start)/1000
 document.getElementById("so4").innerHTML = "Çalışma süresi: ~"+ time1+" saniye";
 document.getElementById("so4").style.color="black";
+document.getElementById("so2").innerHTML="Çalışıyor...";
+document.getElementById("so2").style.color="#b2d1d1";
 
 setTimeout(function(){
 document.getElementById("sa2").innerHTML="Çalışıyor...";
@@ -179,13 +182,16 @@ document.getElementById("sa2").style.color="black";
 
 setTimeout(function(){
 var start1 = new Date().getTime();
-document.getElementById("sa3").innerHTML = isperfect(Number(document.getElementById("ar").value));
+document.getElementById("sa3").innerHTML = isPerfect(Number(document.getElementById("ar").value));
 document.getElementById("sa3").style.color="black";
 var end1 = new Date().getTime();
 time2=(end1 - start1)/1000
 document.getElementById("sa4").innerHTML = "Çalışma süresi: ~"+ time2 + " saniye";
 document.getElementById("sa4").style.color="black";
-document.getElementById("son").innerHTML="İkinci algoritma birinci algoritmadan ~" +(time1-time2)+" saniye daha hızlıdır";},100);
+document.getElementById("sa2").innerHTML="Çalışıyor...";
+document.getElementById("sa2").style.color="#b2d1d1";
+document.getElementById("son").innerHTML="İkinci algoritma birinci algoritmadan ~" +(time1-time2)+" saniye daha hızlıdır";},100);7
+
 },500);
 
 }
