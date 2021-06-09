@@ -20,7 +20,8 @@
 
 }
 
-body{font-family:'cheyenne_sansregular';background-color:#c91c1c;}
+body{font-family:'cheyenne_sansregular';background-color:#ff9c9c
+;}
 #so{font-size:40px;}
 .d{border-radius:20px;margin-top:10vh;font-size:30px;text-align:center;height:45vh;width:38vw;transition: .5s ease;background-color:#b2d1d1}
 
@@ -54,7 +55,7 @@ body{font-family:'cheyenne_sansregular';background-color:#c91c1c;}
 <img  src="kodkotu.png">
 </div>
 <p id="so1">
-<b>Yavaş Algoritma</b>
+<b>Birinci Algoritma</b>
 </p>
 <p class="me" id="so2">
 a
@@ -72,7 +73,7 @@ a
 <img src="kodiyi.png">
 </div>
 <p id="sa1">
-<b>Hızlı Algoritma</b>
+<b>İkinci Algoritma</b>
 </p>
 <p class="me" id="sa2">
 a
@@ -102,12 +103,25 @@ if(!(n % i))
 	return (n == s)?n + " sayısı mükemmel sayıdır.":n + " sayısı mükemmel sayı değildir.";
 }
 
+function kare(s,n){
+var s1=s;
+for(var i = 1; i<s;i++)s1=(s1+s)%n;
+
+
+}
+
 function mod(n,m){
     if (n < 0)return n % m + m;
     else return n % m;
   
   
   
+}
+function isperfect(n){
+	arr=[6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128];
+	for(var i = 0;i<8;i++)if(arr[i]==n)return n+" sayısı bir mükemmel sayıdır";
+	return n+" sayısı mükemmel bir sayı değildir";
+
 }
 function isPerfect(n){
 	var n1 = n;
@@ -154,7 +168,7 @@ document.getElementById("so3").innerHTML = aisPerfect(Number(document.getElement
 document.getElementById("so3").style.color="black";
 var end = new Date().getTime();
 time1=(end - start)/1000
-document.getElementById("so4").innerHTML = "çalışma süresi: ~"+ time1+" saniye";
+document.getElementById("so4").innerHTML = "Çalışma süresi: ~"+ time1+" saniye";
 document.getElementById("so4").style.color="black";
 
 setTimeout(function(){
@@ -165,13 +179,13 @@ document.getElementById("sa2").style.color="black";
 
 setTimeout(function(){
 var start1 = new Date().getTime();
-document.getElementById("sa3").innerHTML = isPerfect(Number(document.getElementById("ar").value));
+document.getElementById("sa3").innerHTML = isperfect(Number(document.getElementById("ar").value));
 document.getElementById("sa3").style.color="black";
 var end1 = new Date().getTime();
 time2=(end1 - start1)/1000
 document.getElementById("sa4").innerHTML = "Çalışma süresi: ~"+ time2 + " saniye";
 document.getElementById("sa4").style.color="black";
-document.getElementById("son").innerHTML="Hızlı algoritma yavas algoritmadan ~" +(time1-time2)+" saniye daha hızlıdır";},100);
+document.getElementById("son").innerHTML="İkinci algoritma birinci algoritmadan ~" +(time1-time2)+" saniye daha hızlıdır";},100);
 },500);
 
 }
