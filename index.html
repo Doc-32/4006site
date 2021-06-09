@@ -20,19 +20,19 @@
 
 }
 
-body{font-family:'cheyenne_sansregular';background-color:#730202;}
+body{font-family:'cheyenne_sansregular';background-color:#c91c1c;}
 #so{font-size:40px;}
-.d{padding-top:0vh;margin-top:10vh;font-size:30px;text-align:center;height:45vh;width:35vw;transition: .5s ease;background-color:#a3a3a3}
+.d{border-radius:20px;margin-top:10vh;font-size:30px;text-align:center;height:45vh;width:35vw;transition: .5s ease;background-color:#b2d1d1}
 
 .sol{margin-left:7vw;float:left;}
 .sag{margin-right:7vw;float:right;}
 .me{margin-top:2vh;}
-#so2{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
-#so3{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
-#so4{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
-#sa2{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
-#sa3{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
-#sa4{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#so2{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
+#so3{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
+#so4{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
+#sa2{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
+#sa3{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
+#sa4{font-family:'fira_codelight';transition: .5s ease;color:#b2d1d1}
 #buto1{width:5vw;height:5vh;}
 .aa{height:0.1vh;}
 .aa:hover{height:35vh;}
@@ -50,8 +50,8 @@ body{font-family:'cheyenne_sansregular';background-color:#730202;}
 
 <div >
 <div class="d sol">
-<div class="aa" style="position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#a3a3a3">
-<img class= "res1" src="kodkotu.png">
+<div class="aa" style="border-radius:20px;position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#b2d1d1">
+<img  src="kodkotu.png">
 </div>
 <p id="so1">
 <b>Yavaş Algoritma</b>
@@ -68,8 +68,8 @@ a
 
 </div>
 <div class="d sag" id="saj">
-<div class="aa1" style="position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#a3a3a3">
-<img class="res2" src="kodiyi.png">
+<div class="aa1" style="border-radius:20px;position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#b2d1d1">
+<img src="kodiyi.png">
 </div>
 <p id="sa1">
 <b>Hızlı Algoritma</b>
@@ -86,7 +86,7 @@ a
 </div>
 </div>
 
-  <input value="6" id="ar" style="margin-top:10vh;border: none;border-radius:25px;margin-left:41vw;width:16vw; height:8vh; " ></input><br><br>
+  <input value="6" id="ar" style="text-align:center;margin-top:10vh;border: none;border-radius:25px;margin-left:41vw;width:16vw; height:8vh; " ></input><br><br>
   <button style="border-radius:15px;border: none;margin-left:39vw;width:20vw; height:8vh; " onClick="deneme();">çalış</button>
 
 <div style="font-size:25px;clear:both;text-align:center;padding:5vh;" id = "son"></div>
@@ -99,7 +99,7 @@ var s = 0;
 for(var i=1;i<n;i++){
 if(!(n % i))
 			s += i;}
-	return (n == s)?"mükemmel sayıdır":"mükemmel sayı değildir";
+	return (n == s)?n + " sayısı mükemmel sayıdır.":n + " sayısı mükemmel sayı değildir.";
 }
 
 function mod(n,m){
@@ -110,6 +110,7 @@ function mod(n,m){
   
 }
 function isPerfect(n){
+	var n1 = n;
 	var k = 1;
 	while (!(n & 1)){
 		k += 1;
@@ -118,27 +119,27 @@ function isPerfect(n){
 	if (!(n & (n + 1))){
 		if ((! (n >> k)) && (n >> (k - 1)))
 			{
-			if (k == 2)return "mükemmel sayıdır";
+			if (k == 2)return  n1 + " sayısı mükemmel sayıdır.";
 			var s = 4;
 			for(var sak = 0; sak<k-2;sak++) s = mod((s * s - 2),n);
-			if (!s)return "mükemmel sayıdır";
+			if (!s)return  n1+ " sayısı mükemmel sayıdır.";
 			}
-		return "mükemmel sayı değildir";
+		return n1+ " sayısı mükemmel sayı değildir.";
 		}
-		return "mükemmel sayı değildir";
+		return n1 + " sayısı mükemmel sayı değildir.";
 	}
 	
 
 var time1=0;
 var time2=0;
 function deneme(){
-document.getElementById("so2").style.color="#a3a3a3";
-document.getElementById("so3").style.color="#a3a3a3";
-document.getElementById("so4").style.color="#a3a3a3";
+document.getElementById("so2").style.color="#b2d1d1";
+document.getElementById("so3").style.color="#b2d1d1";
+document.getElementById("so4").style.color="#b2d1d1";
 
-document.getElementById("sa2").style.color="#a3a3a3";
-document.getElementById("sa3").style.color="#a3a3a3";
-document.getElementById("sa4").style.color="#a3a3a3";
+document.getElementById("sa2").style.color="#b2d1d1";
+document.getElementById("sa3").style.color="#b2d1d1";
+document.getElementById("sa4").style.color="#b2d1d1";
 
 
 
@@ -153,7 +154,7 @@ document.getElementById("so3").innerHTML = aisPerfect(Number(document.getElement
 document.getElementById("so3").style.color="black";
 var end = new Date().getTime();
 time1=(end - start)/1000
-document.getElementById("so4").innerHTML = "süre: "+ time1;
+document.getElementById("so4").innerHTML = "çalışma süresi: ~"+ time1+" saniye";
 document.getElementById("so4").style.color="black";
 
 setTimeout(function(){
@@ -168,9 +169,9 @@ document.getElementById("sa3").innerHTML = isPerfect(Number(document.getElementB
 document.getElementById("sa3").style.color="black";
 var end1 = new Date().getTime();
 time2=(end1 - start1)/1000
-document.getElementById("sa4").innerHTML = "süre: "+ time2;
+document.getElementById("sa4").innerHTML = "Çalışma süresi: ~"+ time2 + " saniye";
 document.getElementById("sa4").style.color="black";
-document.getElementById("son").innerHTML="Hızlı algoritma yavas algoritmadan " +(time1-time2)+" saniye daha hızlıdır";},100);
+document.getElementById("son").innerHTML="Hızlı algoritma yavas algoritmadan ~" +(time1-time2)+" saniye daha hızlıdır";},100);
 },500);
 
 }
