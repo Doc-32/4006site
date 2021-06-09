@@ -2,13 +2,171 @@
 <html>
 <title>Web Page Design</title>
 <head>
-<style type="text/css">
-div{text-align:center;font-size:50px;}
-body{background-color:green;}
+<style>
+@font-face {
+    font-family: 'fira_codelight';
+    src: url('firacode-variablefont_wght-webfont.woff2') format('woff2'),
+         url('firacode-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cheyenne_sansregular';
+    src: url('cheyennesans-regular-webfont.woff2') format('woff2'),
+         url('cheyennesans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{font-family:'cheyenne_sansregular';background-color:#730202;}
+#so{font-size:40px;}
+.d{padding-top:0vh;margin-top:10vh;font-size:30px;text-align:center;height:45vh;width:35vw;transition: .5s ease;background-color:#a3a3a3}
+
+.sol{margin-left:7vw;float:left;}
+.sag{margin-right:7vw;float:right;}
+.me{margin-top:2vh;}
+#so2{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#so3{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#so4{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#sa2{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#sa3{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+#sa4{font-family:'fira_codelight';transition: .5s ease;color:#a3a3a3}
+.aa{height:0.1vh;}
+.aa:hover{height:35vh;}
+.aa1{height:0.1vh;}
+.aa1:hover{height:55vh;}
+
 </style>
 </head>
 <body>
-<div>Doğum günün kutlu olsun!</div>
-<img src="resim.png">
+<div >
+<div class="d sol">
+<div class="aa" style="position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#a3a3a3">
+<img src="kodkotu.png">
+</div>
+<p id="so1">
+<b>Yavaş Algoritma</b>
+</p>
+<p class="me" id="so2">
+a
+</p >
+<p class="me" id="so3">
+a
+</p>
+<p class="me" id="so4">
+a
+</p>
+
+</div>
+<div class="d sag" id="saj">
+<div class="aa1" style="position: absolute;transition:.5s ease;overflow:hidden; width:35vw;background-color:#a3a3a3">
+<img src="kodiyi.png">
+</div>
+<p id="sa1">
+<b>Hızlı Algoritma</b>
+</p>
+<p class="me" id="sa2">
+a
+</p>
+<p class="me" id="sa3">
+a
+</p>
+<p class="me" id="sa4">
+a
+</p>
+</div>
+</div>
+
+  <input value="6" id="ar" style="margin-top:10vh;border: none;border-radius:25px;margin-left:41vw;width:16vw; height:8vh; " ></input><br><br>
+  <button style="border-radius:15px;border: none;margin-left:39vw;width:20vw; height:8vh; " onClick="deneme();">çalış</button>
+
+<div style="font-size:25px;clear:both;text-align:center;padding:5vh;" id = "son"></div>
+
+<script>
+
+
+function aisPerfect(n){
+var s = 0;
+for(var i=1;i<n;i++){
+if(!(n % i))
+			s += i;}
+	return (n == s)?"mükemmel sayıdır":"mükemmel sayı değildir";
+}
+
+function mod(n,m){
+    if (n < 0)return n % m + m;
+    else return n % m;
+  
+  
+  
+}
+function isPerfect(n){
+	var k = 1;
+	while (!(n & 1)){
+		k += 1;
+		n >>= 1;
+		}
+	if (!(n & (n + 1))){
+		if ((! (n >> k)) && (n >> (k - 1)))
+			{
+			if (k == 2)return "mükemmel sayıdır";
+			var s = 4;
+			for(var sak = 0; sak<k-2;sak++) s = mod((s * s - 2),n);
+			if (!s)return "mükemmel sayıdır";
+			}
+		return "mükemmel sayı değildir";
+		}
+		return "mükemmel sayı değildir";
+	}
+	
+
+var time1=0;
+var time2=0;
+function deneme(){
+document.getElementById("so2").style.color="#a3a3a3";
+document.getElementById("so3").style.color="#a3a3a3";
+document.getElementById("so4").style.color="#a3a3a3";
+
+document.getElementById("sa2").style.color="#a3a3a3";
+document.getElementById("sa3").style.color="#a3a3a3";
+document.getElementById("sa4").style.color="#a3a3a3";
+
+
+
+setTimeout(function(){
+document.getElementById("so2").innerHTML="Çalışıyor...";
+document.getElementById("so2").style.color="black";
+},10);
+
+setTimeout(function(){
+var start = new Date().getTime();
+document.getElementById("so3").innerHTML = aisPerfect(Number(document.getElementById("ar").value));
+document.getElementById("so3").style.color="black";
+var end = new Date().getTime();
+time1=(end - start)/1000
+document.getElementById("so4").innerHTML = "süre: "+ time1;
+document.getElementById("so4").style.color="black";
+
+setTimeout(function(){
+document.getElementById("sa2").innerHTML="Çalışıyor...";
+document.getElementById("sa2").style.color="black";
+},100);
+
+
+setTimeout(function(){
+var start1 = new Date().getTime();
+document.getElementById("sa3").innerHTML = isPerfect(Number(document.getElementById("ar").value));
+document.getElementById("sa3").style.color="black";
+var end1 = new Date().getTime();
+time2=(end1 - start1)/1000
+document.getElementById("sa4").innerHTML = "süre: "+ time2;
+document.getElementById("sa4").style.color="black";
+document.getElementById("son").innerHTML="Hızlı algoritma yavas algoritmadan " +(time1-time2)+" saniye daha hızlıdır";},100);
+},500);
+
+}
+</script>
 </body>
 </html>
